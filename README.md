@@ -75,7 +75,11 @@ Inputs
 | role_policy | Policies to be attached to IAM roles. It is a map variable that should be written as Role_name = [List of policies] | `map(any)` | `{}` | no |
 
 
+Things to note:
+------
 
+* This module will create Roles and policies as defined in the variables role, policy.
+* If you are creating policies using this module and passing the name for attaching to Roles, it will assign it using the resource details, else it will check the ARN from AWS and assign it to the Role, by using data. 
 
 Output
 ------
